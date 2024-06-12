@@ -1,0 +1,117 @@
+// app global css in SCSS form
+@import url('https://fonts.googleapis.com/css2?family=Snowburst+One&display=swap');
+
+body {
+  font-family: 'Snowburst One', sans-serif;
+}
+.ingredients {
+  padding: 0 clamp(3vw, 1rem, 3rem);
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style-type: none;
+  min-width: 22rem;
+}
+
+.ingridient {
+  width: clamp(40%, 90px, 150px);
+  margin-bottom: 0.5rem;
+  &-name {
+    color: $light;
+    font-size: 16px;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+  &-img img {
+    width: 100%;
+    background-color: $light;
+    padding: 0.5rem;
+    border-radius: 100%;
+    object-fit: contain !important;
+    box-sizing: border-box;
+  }
+}
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.burger-img img {
+  width: 60% !important;
+  max-width: 200px !important;
+  height: initial !important;
+  object-fit: contain;
+}
+.text-h4 {
+  color: $light;
+  font-size: clamp(1.5rem, -3.5rem + 6.6667vw, 4.5rem);
+  line-height: 1;
+  line-break: strict;
+}
+
+.text-subtitle1 {
+  width: 300px;
+  max-width: 75%;
+  margin: auto;
+  font-size: clamp(0.875rem, 0.8173rem + 0.2564vw, 1.125rem);
+}
+
+form {
+  width: 75%;
+  max-width: 20rem;
+}
+.burger {
+  max-width: 30vw;
+  margin: auto;
+  position: relative;
+}
+.ingredient-img {
+  max-width: 100%;
+  &.lettuce {
+    // calculation of % mmaginage based on image dimensions (27px x 286px) (percentage height divided by 2)
+    margin-bottom: calc(-2700% / 286 / 2);
+    position: relative;
+  }
+
+  &.cheese {
+    // calculation of % mmaginage based on image dimensions (37px x 286px) (percentage height divided by 2)
+    margin-bottom: calc(-3700% / 286 / 2);
+    position: relative;
+  }
+
+  &.tomato {
+    // calculation of % mmaginage based on image dimensions (43px x 286px) (percentage height divided by 2)
+    margin-bottom: calc(-4300% / 286 / 2);
+    position: relative;
+  }
+}
+.err {
+  text-align: center;
+  color: $negative;
+  font-size: 18px;
+  font-weight: 700;
+}
+.success {
+  text-align: center;
+  color: $positive;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-down-enter-from,
+.slide-down-leave-to {
+  transform: translateY(-10%);
+  opacity: 0;
+}
+
+.slide-down-enter-to,
+.slide-down-leave-from {
+  transform: translateY(0);
+  opacity: 1;
+}
